@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>xRTML.org: Storefy</title>
+<link rel="stylesheet" media="all" href="css/styles.css">
+
+<script src="js/xrtml-3.0-min.js"></script>
+<script>
+    var appkey = '';
+	var url = 'http://developers2.realtime.livehtml.net/server/2.1';
+    var template = '<b>before <em>&euro; $25.00</em></b><span>now &euro; $19.99</span>';
+
+    
+
+</script>
+
+</head>
+<body lang="en">
+
+    <header>
+	    <a href="index.html"><h1>Storefy</h1></a>
+	    <h2>a realtime demo using xrtml</h2>
+	    <h3>You’re currently browsing a <a href="http://www.realtime.co/" target="_blank">Realtime&reg;</a> demo using <a href="http://www.xrtml.org/" target="_blank">xRTML</a>. Feel free to navigate and experience the real time action. <a href="#" target="_blank">Click here</a> to learn about this demo and how it works. <a href="http://www.realtime.co/" target="_blank" class="break">Want to know more about Realtime&reg;? Click here</a></h3>
+    </header>
+
+    <article>
+	    <fieldset>
+	    	<legend>Price</legend>
+	    	<div>
+	    			<label for="oldPrice">Old price:<label></label><input type="text" id="oldPrice" />
+    		</div>
+    		<div>
+    				<label for="newPrice">New price:<label></label><input type="text" id="newPrice" />
+    		</div>
+    		<div>
+    				<input type="button" onclick="updatePrice();" value="Update price »" />
+    		</div>
+	    </fieldset>
+
+    </article>
+
+    <footer>
+	    <a href="http://www.xrtml.org/" target="_blank" class="xrtml">xRTML</a>
+	    <a href="http://www.realtime.co/" target="_blank" class="realtime">Made using Realtime xRTML</a>
+    </footer>	
+
+</body>
+
+</html>

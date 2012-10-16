@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>xRTML.org: Storefy</title>
+<link rel="stylesheet" media="all" href="css/styles.css">
+
+<script src="js/xrtml-3.0-min.js"></script>
+<script>
+	var appkey = '';
+	var url = 'http://developers2.realtime.livehtml.net/server/2.1';
+
+	/*	
+	product template:
+		{
+			url: 'product_4.html',
+			name: 'T-shirt Realtime (white)',
+			img: 'img/tshirt_small_white.jpg',
+			price: '$19.99'
+		}
+	*/
+
+</script>
+
+</head>
+<body lang="en">
+
+    <header>
+	    <a href="index.html"><h1>Storefy</h1></a>
+	    <h2>a realtime demo using xrtml</h2>
+	    <h3>You’re currently browsing a <a href="http://www.realtime.co/" target="_blank">Realtime&reg;</a> demo using <a href="http://www.xrtml.org/" target="_blank">xRTML</a>. Feel free to navigate and experience the real time action. <a href="#" target="_blank">Click here</a> to learn about this demo and how it works. <a href="http://www.realtime.co/" target="_blank" class="break">Want to know more about Realtime&reg;? Click here</a></h3>
+    </header>
+
+    <ul class="products">
+	    <li><a href="product_1.html">
+		    <img src="img/tshirt_small_grey.jpg" width="180" height="180" alt="T-shirt Realtime (grey)" title="T-shirt Realtime (grey)" />
+		    <strong>T-shirt Realtime (grey)</strong>
+		    <div>
+		        	<span>&euro;19.99</span>
+		    	</div>
+		    </a>
+	    </li>
+	    <li><a href="product_2.html">
+		    <img src="img/tshirt_small_orange.jpg" width="180" height="180" alt="T-shirt Realtime (orange)" title="T-shirt Realtime (orange)" />
+		    <strong>T-shirt Realtime (orange)</strong>
+		    <div class="price">
+		        	<span>&euro;19.99</span>
+		    	</div>
+		    </a>
+	    </li>
+	    <li><a href="product_3.html">
+		    <img src="img/tshirt_small_blue.jpg" width="180" height="180" alt="T-shirt Realtime (blue)" title="T-shirt Realtime (blue)" />
+		    <strong>T-shirt Realtime (blue)</strong>
+		    <div class="price">
+		        	<span>&euro;19.99</span>
+		    	</div>
+		    </a>
+	    </li>
+	    <li><a href="product_4.html">
+		    <img src="img/tshirt_small_white.jpg" width="180" height="180" alt="T-shirt Realtime (white)" title="T-shirt Realtime (white)" />
+		    <strong>T-shirt Realtime (white)</strong>
+		    <div class="price">
+		        	<span>&euro;19.99</span>
+		    	</div>
+		    </a>
+	    </li>
+    </ul>
+
+    <div id="productsViewedWrapper">
+        
+        <h4>
+	        <strong>products being viewed right now in realtime</strong>
+	        <span>rt</span>
+        </h4>
+
+        <ul id="productsViewed" class="products">
+        	<li><a href="product_4.html">
+		        <img src="img/tshirt_small_white.jpg" width="180" height="180" alt="T-shirt Realtime (white)" title="T-shirt Realtime (white)" />
+		        <strong>T-shirt Realtime (white)</strong>
+		        <div class="price">
+		        	<span>$19.99</span>
+		    	</div>
+		        </a>
+	        </li>
+	        <li><a href="product_4.html">
+		        <img src="img/tshirt_small_white.jpg" width="180" height="180" alt="T-shirt Realtime (white)" title="T-shirt Realtime (white)" />
+		        <strong>T-shirt Realtime (white)</strong>
+		        <div class="price">
+		        	<span>$19.99</span>
+		    	</div>
+		        </a>
+	        </li>
+	        <li><a href="product_4.html">
+		        <img src="img/tshirt_small_white.jpg" width="180" height="180" alt="T-shirt Realtime (white)" title="T-shirt Realtime (white)" />
+		        <strong>T-shirt Realtime (white)</strong>
+		        <div class="price">
+		        	<span>$19.99</span>
+		    	</div>
+		        </a>
+	        </li>
+	        <li><a href="product_4.html">
+		        <img src="img/tshirt_small_white.jpg" width="180" height="180" alt="T-shirt Realtime (white)" title="T-shirt Realtime (white)" />
+		        <strong>T-shirt Realtime (white)</strong>
+		        <div class="price">
+		        	<span>$19.99</span>
+		    	</div>
+		        </a>
+	        </li>
+        </ul>
+
+        <!--
+			<li><a href="product_4.html">
+		        <img src="img/tshirt_small_white.jpg" width="180" height="180" alt="T-shirt Realtime (white)" title="T-shirt Realtime (white)" />
+		        <strong>T-shirt Realtime (white)</strong>
+		        <div class="price">
+		        	<span>$19.99</span>
+		    	</div>
+		        </a>
+	        </li>
+	-->
+
+    </div>
+
+    <script type="text/html" id="myTemplate">
+    	<li><a data-bind="attr: { href: url }">
+	        <img data-bind="attr: { src: img, alt: name, title: name }" width="180" height="180" />
+	        <strong data-bind="text: name"></strong>
+	        <div class="price">
+	        	<span data-bind="text: price"></span>
+	    	</div>
+	        </a>
+        </li>
+    </script>
+
+    <footer>
+	    <a href="http://www.xrtml.org/" target="_blank" class="xrtml">xRTML</a>
+	    <a href="http://www.realtime.co/" target="_blank" class="realtime">Made using Realtime xRTML</a>
+    </footer>
+
+</body>
+
+</html>
