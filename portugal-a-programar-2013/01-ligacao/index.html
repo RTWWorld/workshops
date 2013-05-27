@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<script src="http://code.xrtml.org/xrtml-3.2.0.js"></script>
+	<script>
+		var appkey = 'YOUR_APP_KEY';
+		var url = 'http://ortc-developers.realtime.co/server/2.1';
+
+		window.xRTML302 = xRTMLVersions["3.2.0"];
+		
+		xRTML302.load(function() {
+			xRTML302.Config.debug = true;
+
+			xRTML.ConnectionManager.create(
+			{
+				id: 'myConn',
+				appkey: appkey,
+				authToken: 'anything',
+				url: url,
+				channels: [
+					{name: 'pap:channel1'}
+				]
+			});
+		});
+
+	</script>
+</body>
+</html>
