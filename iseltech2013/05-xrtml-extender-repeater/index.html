@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+    <input type="text" id="message" />
+    <input type="button" onclick="sendMessage();" value="Enviar" />
+    <ul id="log"></ul>
+
+    <script type="text/html" id="log-repeater">
+        <li>
+            <span data-bind="text: message"></span>
+        </li>
+    </script>
+
+    <script src="http://code.xrtml.org/xrtml-3.2.0.js"></script>
+    <script>
+        var appkey = 'YOUR_APP_KEY';
+        var url = 'http://ortc-developers.realtime.co/server/2.1';
+
+        function sendMessage(){
+            var msg = document.getElementById('message').value;
+
+            xRTML.ConnectionManager.sendMessage({
+                connections: ["myConn"],
+                channel: "pap:channel1",
+                content: xRTML.MessageManager.create(
+                    {
+                        action: "insert",
+                        trigger: "my_trigger",
+                        data: {
+                            content: {
+                                message: msg
+                            }
+                        }
+                    }
+                )
+            });
+        }
+
+        window.xRTML320 = xRTMLVersions["3.2.0"];
+        
+        xRTML320.load(function() {
+            xRTML320.Config.debug = true;
+
+            xRTML.ConnectionManager.create(
+            {
+                id: 'myConn',
+                appkey: appkey,
+                authToken: 'anything',
+                url: url,
+                channels: [
+                    {name: 'pap:channel1'}
+                ]
+            });
+
+            xRTML.TagManager.register({
+                name: 'MyRepeater',
+                base: 'Repeater',
+                struct: function () {
+                    this.init = function (data, callback) {
+                        this._super(data, callback);
+                        callback(this);
+                    }
+
+                    this.insert = function (data) {
+                        alert(data);
+                        this._super(data);
+                    };
+
+                    this.reverse = function () {
+                        this.ViewModel.Items(this.ViewModel.Items().reverse());
+                    };
+                }
+            });
+
+            xRTML.TagManager.create({
+                id: "my_rpt",
+                name: "MyRepeater",
+                target: "#log",
+                triggers: ['my_trigger'],
+                template: "log-repeater",
+                maxItems: 3
+            });
+        })
+
+    </script>
+</body>
+</html>
