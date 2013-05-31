@@ -14,7 +14,7 @@ public partial class _default : System.Web.UI.Page
         string OrtcApplicationKey = "YOUR_APP_KEY";
         string OrtcPrivateKey = "YOUR_PRIVATE_KEY";
         string OrtcAuthenticationToken = "YOUR_AUTHENTICATION_TOKEN";
-        string OrtcServer = "http://developers2.realtime.livehtml.net/server/2.1/";
+        string OrtcServer = "http://ortc-developers.realtime.co/server/2.1";
         int ttl = 604800;
                 
         Dictionary<string, ChannelPermissions> permissions = new Dictionary<string, ChannelPermissions>();
